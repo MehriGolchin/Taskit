@@ -69,3 +69,12 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.client-color {
+  color: #721c24;
+  font-size: xx-large;
+}
+
+.blog-wrapper {
+  margin-top: 5px;
+}
