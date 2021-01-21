@@ -1,12 +1,14 @@
-$HEADER$using Microsoft.AspNetCore.Mvc;
-namespace $NAMESPACE$
+using Microsoft.AspNetCore.Mvc;
+
+namespace Taskit.Controllers
 {
-  public class $CLASS$: Controller
+  [Route("[Controller]")]
+  public class TaskController: Controller
   {
-    // GET
+    [HttpGet]
     public IActionResult Index()
     {
-	  $END$return View();
+	    return View();
     }
   }
 }
