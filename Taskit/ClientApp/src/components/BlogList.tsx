@@ -1,7 +1,21 @@
-import React from "react";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {getBlog} from "../store/blog/actions";
+import {TaskitState} from "../store/types";
 
 export const BlogList = (props: any) => {
-    const {blogs, handleDelete} = props;
+    //const {blogs, handleDelete} = props;
+    const {isLoaded, isLoading, items: blogs} = useSelector((s:TaskitState) => s.blog)
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        (async () => {
+            await dispatch(getBlog());
+        })();
+    }, [dispatch]);
+
+    const handleDelete = (id: number) => { }
+    
     return (
         <>
             {blogs.map((blog: any) => (
